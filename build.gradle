@@ -1,10 +1,13 @@
 buildscript {
     repositories {
-        mavenCentral()
         mavenLocal()
+        maven { url "https://maven.aliyun.com/repository/central" }
+        maven { url "https://maven.aliyun.com/repository/spring-plugin" }
+        maven { url "https://maven.aliyun.com/repository/gradle-plugin" }
         maven { url "http://repo.spring.io/snapshot" }
         maven { url "http://repo.spring.io/milestone" }
         maven { url "http://repo.spring.io/release" }
+        mavenCentral()
     }
     dependencies {
         classpath "org.springframework.boot:spring-boot-gradle-plugin:2.0.2.RELEASE"
@@ -46,8 +49,10 @@ allprojects {
     }
 
     repositories {
-        mavenCentral()
+        maven { url "https://maven.aliyun.com/repository/spring" }
         mavenLocal()
+        maven { url "https://maven.aliyun.com/repository/central" }
+        mavenCentral()
         if (getProp("M2_LOCAL")) {
             maven {
                 url getProp("M2_LOCAL")
